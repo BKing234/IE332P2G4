@@ -5,10 +5,10 @@ library(reticulate)
 install_tensorflow(extra_packages="pillow")
 install_keras()
 
-# Load the pre-trained model
+# Load the original data
 model <- load_model_tf("/home/jupyter/332_data/dandelion_model")
 
-# Define target size for input images
+# Define size of images and color channels
 width <- 224
 height <- 224
 target_size <- c(width, height)
@@ -36,7 +36,7 @@ fgsm_attack <- function(image, label, epsilon, model) {
   perturbation <- epsilon * sign_grad
   # Add the perturbation to the input image
   x_adv <- x + perturbation
-  # Clip the pixel values to the range [0, 1]
+  # Make the pixel values fit in the range [0, 1]
   x_adv <- pmax(pmin(x_adv, 1), 0)
   # Scale the pixel values back to the range [0, 255]
   x_adv <- x_adv * 255
