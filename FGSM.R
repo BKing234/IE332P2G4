@@ -5,7 +5,7 @@ library(reticulate)
 install_tensorflow(extra_packages="pillow")
 install_keras()
 
-# Load the original data
+# Load the original model
 model <- load_model_tf("/home/jupyter/332_data/dandelion_model")
 
 # Define size of images and color channels
