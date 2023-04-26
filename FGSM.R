@@ -15,7 +15,7 @@ target_size <- c(width, height)
 rgb <- 3
 
 # Define epsilon value
-epsilon <- 0.001
+epsilon <- 0.01
 
 # Define function for FGSM attack
 fgsm_attack <- function(image, label, epsilon, model) {
