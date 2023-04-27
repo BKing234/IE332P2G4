@@ -25,15 +25,27 @@ fgsm_attack <- function(image, label, epsilon, model) {
   x <- array_reshape(x, c(1, dim(x)))
   # Scale the pixel values to the range [0, 1]
   x <- x / 255
-  # Compute the loss and gradients for the input image and label
-  loss <- function(x) {
-    k_categorical_crossentropy(model(x), label)
+  # Compute the loss and gradients for the input images and labels
+  label_dandelion <- c(1, 1)
+  label_grass <- c(1, 2)
+  loss_dandelion <- function(x) {
+    k_categorical_crossentropy(model(x), label_dandelion)
   }
-  grad <- gradient(loss, x)
+  loss_grass <- function(x) {
+    k_categorical_crossentropy(model(x), label_grass)
+  }
+  grad_dandelion <- gradient(loss_dandelion, x)
+  grad_grass <- gradient(loss_grass, x)
   # Compute the sign of the gradients
-  sign_grad <- sign(grad)
+  sign_grad_dandelion <- sign(grad_dandelion)
+  sign_grad_grass <- sign(grad_grass)
   # Compute the perturbation as the epsilon times the sign of the gradients
-  perturbation <- epsilon * sign_grad
+  if (model(x)[[1]]$class_name == "dandelion") {
+    perturbation <- epsilon * sign_grad_grass
+  } 
+  else {
+    perturbation <- epsilon * sign_grad_dandelion
+  }
   # Add the perturbation to the input image
   x_adv <- x + perturbation
   # Make the pixel values fit in the range [0, 1]
@@ -46,7 +58,7 @@ fgsm_attack <- function(image, label, epsilon, model) {
 }
 
 # Define function to modify only 1% of the pixels in the image
-modify_image <- function(image, percent) {
+mod_image <- function(image, percent) {
   # Calculate the number of pixels in the image
   n_pixels <- prod(dim(image)[-1])
   # Calculate the number of pixels to modify
