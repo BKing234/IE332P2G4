@@ -38,4 +38,4 @@ Another benefit to using one-pixel attacks is they typically have a high success
 to test this model to its full potential, so this statement was not able to be verified. Because of this, further research was performed to gage a better 
 understanding of what should have occurred within this attack. This led to knowledge regarding this sensitivity to small changes within images, including 
 the color values of individual pixels. The lack of strength and flexibility within these models to accept changes ultimately makes the susceptible to 
-adversarial attacks. This is why the success rates of one-pixel attacks are so high, as they are baffling in the eyes of the classifier. 
+adversarial attacks. (Su et al., 2019) This is why the success rates of one-pixel attacks are so high, as they are baffling in the eyes of the classifier. 
