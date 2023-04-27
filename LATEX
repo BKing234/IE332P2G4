@@ -1,0 +1,34 @@
+ONE-PIXEL ATTACK METHOD
+
+There are many types of algorithms and attacks that can be used to fool an image classification model. One model used to do so is the one-pixel 
+attack method. According to a published research journal called ‘Hindawi’, “the purpose of a one-pixel attack is to maliciously change the 
+classification result of a victim image from its original label to a target lab.” (Wang et al., 2021) In more condense terms, this means a single 
+pixel is modified in an input image causing a misclassification by the model. This small change of only one pixel may not be noticeable to the human
+eye but can be just enough to trick the classifier. 
+
+We chose to use this model because it is simple and efficient. Using the one-pixel attack method, an attacker modifies one pixel of the image. Take 
+our images, for example. A small change within a dandelion or the background color in a piece of grass, could cause our classier to display incorrect
+results. This was shown in the pixel code by creating a yellow mask and replacing the color yellow with the color green. In this case, replacing 
+pieces of a dandelion with the green color could result in the classifier mistaking it for grass. 
+
+Another reason to use the one-pixel attack method is because it is typically difficult to detect. In many cases, especially when trying to trick a 
+form of AI, it is best if it is not obvious the image has been altered. In our case, it is more noticeable that the image has been altered to 
+guarantee there were changing being made and tests to be run. In the perfect scenario, it would be unknown that any changes were made to the image, 
+but the classifier displays an incorrect final assumption percentage. 
+
+Another benefit to using one-pixel attacks is they typically have a high success rate. Through testing and many modifications, we did not have the 
+ability to test this model to its full potential, so this statement was not able to be verified. Because of this, further research was performed to 
+gage a better understanding of what should have occurred within this attack. This led to knowledge regarding this sensitivity to small changes within
+images, including the color values of individual pixels. The lack of strength and flexibility within these models to accept changes ultimately makes
+the susceptible to adversarial attacks. (Su et al., 2019) This is why the success rates of one-pixel attacks are so high, as they are baffling in 
+the eyes of the classifier. 
+
+Throughout this project, there was more success working with this type of algorithm in Matlab. The code and images provided were the results of a 
+Matlab code, but displayed errors when attempted to run in R. The R code failed to alter the image in any way, which was assumed to be because of 
+the lack of determination when changing singular pixels. This was not able to be determined, as we were unable to run the code any further in R form. 
+In order to show that something was done to attempt this, we created a larger change in the colors of a sample image in Matlab. Both the Matlab and R 
+version of the code will be provided to show the process and understanding of the attack attempted to be made. The image below shows the original 
+photo, the yellow mask of the photo, and the photo after it had been changed.  From this, it is shown that the correctness of the code is minimal, 
+but the overall algorithm did make changes to an image to fool a classifier based on the colors. If there were more time, knowledge, and contribution
+, the efficiency in the light of performance would have increased from where it is now. It is difficult to express the performance of the algorithm, 
+as it is lacking functionality. 
