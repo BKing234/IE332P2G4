@@ -4,6 +4,7 @@ A <- load.image("/Users/abby/Desktop/A2P2/dandelions/636597665741397587-dandelio
 #Add noise the image
 A.noisy <- (A + .5*rnorm(prod(dim(A))))
 layout(t(1:2))
+isoblur(A.noisy,5)
 
 #Plot the original image
 plot(A, main = "Original Image", axes = FALSE)
