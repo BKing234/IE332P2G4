@@ -1,24 +1,60 @@
+WORKING MATLAB CODE
+%load sample image
 A = imread("/Users/abby/Desktop/A2P2/dandelions/636597665741397587-dandelion-1097518082.jpg");
+
+%create a plot of the unmodified image
 subplot(2,2,1);
 imshow(A);
 title('Original Image', 'FontSize', 20);
 drawnow;
 
+%extract color channels
 red = A(:, :, 1);
 green = A(:, :, 2);
 blue = A(:, :, 3);
+
 %create a mask same size as image that indicates 'yellow' pixels
 isyellow = red > 173;
+
+%create a plot of the mask
 subplot(2,2,2);
 imshow(isyellow);
 title('Yellow Mask', 'FontSize', 20);
 drawnow;
 
+%set yellow pixels to green
 red(isyellow) = 0;
 green(isyellow) = 255;
+
 %recombine all channels
 newimg = cat(3, red, green, blue);
+
+%create a plot of the modified image
 subplot(2,2,3);
 imshow(newimg);
 title('Changed Image', 'FontSize', 20);
 drawnow;
+
+ATTEMPTED R CODE
+
+library(imager)
+library(jpeg)
+
+# Load image
+A <- readJPEG("/Users/abby/Desktop/A2P2/dandelions/636597665741397587-dandelion-1097518082.jpg")
+plot(A, main = "Orginal Image", axes = FALSE)
+
+# Extract color channels
+red <- A[,,1]
+green <- A[,,2]
+blue <- A[,,3]
+ 
+# Create binary mask for yellow pixels
+isyellow <- red > 173
+
+# Set yellow pixels to green
+red[isyellow] <- 0
+green[isyellow] <- 255
+ 
+# Recombine channels
+ newimg <- brick(red, green, blue)
