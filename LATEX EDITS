@@ -42,4 +42,13 @@ features to trick the model.
 
 There are multiple reasons we chose this method.  The first reason is that that this model can be applied to any image without knowledge of the model.  The
 attack applies a transformation until the classifier is fooled.  This means the algorthm requires much less learning and can trick the binary classifier
-with more ease compared to other methods.  Another reason this model is very useful is it can be applied in a 
+with more ease compared to other methods.  Another reason this model is very useful is it can be applied in a way to target specific labels that
+are supposed to be misclassified.  This is useful because the only two labels were grass or dandelions, so the model could be trained appropriately
+to model grass as dandelions and dandelions as grass.  You can modify the input image to look like something else and because there were only two options
+this is not a hard task to implement. The ways we chose to implement were through rotating, scaling, and shearing.  Rotating the image by a certain angle
+can create different featurs such as lines or curves.  Scaling the image involves expanding or shrinking dimensions along the x or y axis.  This can alter
+certain defining features by making them narrower or shorter.  Shearing distorts the input by skewing it along the x or y axis.  This can cause lines to 
+be slanted or at odd angles.  All of these factors can be applied at small values to fool the classifier while still appearing visualy similar.  These
+methods are all fairly simple to implement while providing great results that fool the classifier.  This attack is very useful when there is a specific 
+outcome in mind which was the case in this project.  In conclusion, the reasons this model was selected were its ease of implementation regardless of 
+prior knowledge and its ability to be applied in a way that has a specific output in mind.
