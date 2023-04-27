@@ -28,3 +28,8 @@ and then addition or subtraction of perturbations based on the sign of the gradi
 adaptability.  The FGSM method can be used for any machine learning model and therefore we knew it would be able to work on the binary image classifier.
 The method has been proven very effective on a wide range of models.  Overall, the reason this model was selected was due to its basic implementation,
 computational efficiency, and effectiveness.
+
+Spatial-Transformation Based Attack
+Justification - The Spatial-Transformation Based Attack (STBA) is an adversial attack that applies a spatial transformation to the input data in order to
+create an adversial image.  "All the existing approaches directly modify pixels, but we aim to smoothly change the geometry of the scene while keeping the
+original appearance
