@@ -1,3 +1,18 @@
+Important things to put in the report.
+1. Justify selection of algortihms
+2. Correctness proofs on code
+3. Complexity analysis of overall algorithm
+4. Justify efficiency tradeoffs in light of performance
+5. Document all iterations and why that path was chosen
+6. Appendices must include
+  i. Testing/Correctness/Verification (1 section)
+  ii. Runtime Complexity and Walltime (1 section)
+  iii. Performance (according to the aforementioned criterion)
+  iv. ustification for the algorithm selected in your final implementation out of the set of implementations you tested
+7. explore the problem and solution space, and report any ideas, interesting insights, and rationale you uncover for tackling the problem
+8. Any useful figures, plots, tables, or analyses are allowed to illustrate your level of depth at which you thought about the problem and your solutions.
+9. Make sure all code is well-commented
+
 ONE-PIXEL ATTACK METHOD
 
 There are many types of algorithms and attacks that can be used to fool an image classification model. One model used to do so is the one-pixel 
