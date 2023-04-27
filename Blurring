@@ -9,5 +9,4 @@ layout(t(1:2))
 plot(A, main = "Original Image", axes = FALSE)
 
 #Plot the modified image
-isoblur(A.noisy,5)
 plot(A.noisy, main = "Modified Image", axes = FALSE)
