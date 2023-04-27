@@ -22,16 +22,24 @@ to the original image while still fooling the computer.  The way this is accompl
 is a quick process because the algorithm will follow the chain rule in finding pixels that contribute to maximum loss.  The chain rule breaks the
 computation into smaller parts, making the calculation of the gradient more accurate and efficient.  The first step in this method is to feed the model
 input data and then calculate the loss.  The gradient with respect to the loss is then calculated.  From this gradient a perturbation is added in order
-to generate the new adversial model.  We chose this method for many reasons.  The first reason is the computational efficiency of the FGSM method.  It
+to generate the new adversial model.  
+
+We chose this method for many reasons.  The first reason is the computational efficiency of the FGSM method.  It
 can generate adversial attacks on a model quickly.  This method is also easy to implement because it requires a calculation of the gradient of the loss
 and then addition or subtraction of perturbations based on the sign of the gradient.  Another reason we chose to implement this method is due to its 
 adaptability.  The FGSM method can be used for any machine learning model and therefore we knew it would be able to work on the binary image classifier.
 The method has been proven very effective on a wide range of models.  Overall, the reason this model was selected was due to its basic implementation,
 computational efficiency, and effectiveness.
 
+
 Spatial-Transformation Based Attack
 Justification - The Spatial-Transformation Based Attack (STBA) is an adversial attack that applies a spatial transformation to the input data in order to
 create an adversial image.  "All the existing approaches directly modify pixels, but we aim to smoothly change the geometry of the scene while keeping the
 original appearance, producing more perceptually realistic adversarial examples" (INSERT CITATION 2).  The goal of this attack is to make the change
 unrecognizable to the human eye, but still make the classifier misclassify the image.  The first step of STBA is to select a transformation function.
-Possible transformations include rotating or scaling the image.  
+Possible transformations include rotating, scaling, or shearing the image.  These transformations are applied to the input and an output is produced with
+features to trick the model.  
+
+There are multiple reasons we chose this method.  The first reason is that that this model can be applied to any image without knowledge of the model.  The
+attack applies a transformation until the classifier is fooled.  This means the algorthm requires much less learning and can trick the binary classifier
+with more ease compared to other methods.  Another reason this model is very useful is it can be applied in a 
