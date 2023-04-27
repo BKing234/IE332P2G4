@@ -14,4 +14,5 @@ Important things to put in the report.
 9. Make sure all code is well-commented
 
 FGSM algorithm
-Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  
+Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  "FGSM is a single step
+attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack). (INSERT CITATION)". 
