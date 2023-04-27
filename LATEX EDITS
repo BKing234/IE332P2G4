@@ -15,7 +15,7 @@ Important things to put in the report.
 
 FGSM algorithm
 Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  "FGSM is a single step
-attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack). (INSERT CITATION 1)". The method works by 
+attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack)" (INSERT CITATION 1). The method works by 
 calculating the gradient of the loss with respect to the original image.  The algorithm then adds a perturbation to to the image based on the gradient's
 sign.  The algorithm modifies the image into its adversial version bt making small perturbations.  This allows the adversial image to look very similar
 to the original image while still fooling the computer.  The way this is accomplished is by finding how much each pixel contributes to the loss.  This
@@ -32,4 +32,6 @@ computational efficiency, and effectiveness.
 Spatial-Transformation Based Attack
 Justification - The Spatial-Transformation Based Attack (STBA) is an adversial attack that applies a spatial transformation to the input data in order to
 create an adversial image.  "All the existing approaches directly modify pixels, but we aim to smoothly change the geometry of the scene while keeping the
-original appearance
+original appearance, producing more perceptually realistic adversarial examples" (INSERT CITATION 2).  The goal of this attack is to make the change
+unrecognizable to the human eye, but still make the classifier misclassify the image.  The first step of STBA is to select a transformation function.
+Possible transformations include rotating or scaling the image.  
