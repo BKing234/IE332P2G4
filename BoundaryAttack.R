@@ -2,8 +2,8 @@
 model <- load_model_tf("/home/jupyter/332_data/dandelion_model")
 
 # Define the binary labels
-grass_label <- [1,2]
-dandelion_label <- [1,1]
+grass_label <- 2
+dandelion_label <- 1
 
 # Define the max percent of pixels that can be altered
 max_pixel <- 0.01
