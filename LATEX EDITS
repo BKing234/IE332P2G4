@@ -12,3 +12,6 @@ Important things to put in the report.
 7. explore the problem and solution space, and report any ideas, interesting insights, and rationale you uncover for tackling the problem
 8. Any useful figures, plots, tables, or analyses are allowed to illustrate your level of depth at which you thought about the problem and your solutions.
 9. Make sure all code is well-commented
+
+FGSM algorithm
+Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  
