@@ -16,3 +16,26 @@ Important things to put in the report.
 FGSM algorithm
 Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  "FGSM is a single step
 attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack). (INSERT CITATION)". 
+
+One Pixel: 
+There are many types of algorithms and attacks that can be used to fool an image classification model. One model used to do so is the one-pixel attack 
+method. According to a published research journal called ‘Hindawi’, “the purpose of a one-pixel attack is to maliciously change the classification result 
+of a victim image from its original label to a target lab.” (Wang et al., 2021) In more condense terms, this means a single pixel is modified in an input 
+image causing a misclassification by the model. This small change of only one pixel may not be noticeableto the human eye but can be just enough to trick 
+the classifier. 
+
+We chose to use this model because it is simple and efficient. Using the one-pixel attack method, an attacker modifies one pixel of the image. Take our images, 
+for example. A small change within a dandelion or the background color in a piece of grass, could cause our classier to display incorrect results. 
+This was shown in the pixel code by creating a yellow mask and replacing the color yellow with the color green. In this case, replacing pieces of a dandelion 
+with the green color could result in the classifier mistaking it for grass. 
+
+Another reason to use the one-pixel attack method is because it is typically difficult to detect. In many cases, especially when trying to trick a form of 
+AI, it is best if it is not obvious the image has been altered. In our case, it is more noticeable that the image has been altered to guarantee there were 
+changing being made and tests to be run. In the perfect scenario, it would be unknown that any changes were made to the image, but the classifier displays 
+an incorrect final assumption percentage. 
+
+Another benefit to using one-pixel attacks is they typically have a high success rate. Through testing and many modifications, we did not have the ability 
+to test this model to its full potential, so this statement was not able to be verified. Because of this, further research was performed to gage a better 
+understanding of what should have occurred within this attack. This led to knowledge regarding this sensitivity to small changes within images, including 
+the color values of individual pixels. The lack of strength and flexibility within these models to accept changes ultimately makes the susceptible to 
+adversarial attacks. This is why the success rates of one-pixel attacks are so high, as they are baffling in the eyes of the classifier. 
