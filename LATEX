@@ -47,3 +47,28 @@ photo, the yellow mask of the photo, and the photo after it had been changed.  F
 but the overall algorithm did make changes to an image to fool a classifier based on the colors. If there were more time, knowledge, and contribution
 , the efficiency in the light of performance would have increased from where it is now. It is difficult to express the performance of the algorithm, 
 as it is lacking functionality. 
+
+BLUR TECHNIQUE
+
+The next technique used to fool an image classifier is inserting noise to output a blurred version of the original image. Adding noise disrupts patterns,
+details, and other factors that make an image recognizable. This results in the image being more difficult to distinguish and classify for the model.  
+Research done at Cornell University found: “Based on the blurring spirit of PS, we further apply gaussian blurring to the data, to investigate the 
+potential influence and threats of gaussian blurring to performance of the network. Experiment results show that PS and well-designed gaussian blurring 
+can form adversarial attacks that completely change classification results of a well-trained target network.” (Zhao & Li, 2020)
+
+The reasoning for using this tactic was because it was effective, flexible, and easy to use. With the troubles our team has faced within the project, 
+we search for an alternative that would change the image in little to no time, using limited functions and tools within R. Through this, we decided on 
+blurring the image. This is effective because the image becomes foggy and less distinct, which creates confusion for the classifier. Our prediction, 
+because we failed in the functionality portion of this process, is that this technique would be most effective when blurring a dandelion. This would 
+confuse the classifier by displaying an image with less details, such as the photos of the grass. 
+
+Adding the blur effect to an image can be more beneficial than just adding noise. Blurring an image can be more difficult for a classifier to detect, 
+especially if the filter is subtle. If the blurring remains subtle, the image can remain similar to the original and be more useful for an adversarial 
+attack. By applying different levels and types of blurring to a set of images, one can further trick a classifier over time. 
+
+To create a better understanding and show we attempted to process the images, we created a breakdown of our code and its functionality. This code is 
+loading an image from a folder and plating an unmodified version to start. This stores it in a variable called ‘A’. The next line creates a modified 
+version of the original image by adding noise to each pixel value of the original image. The ‘rnorm()’ function generates a set of random numbers and 
+‘prod(dim(A))’ calculates the total number of pixels in the image to ensure there is enough random noise generated to match the size of the original 
+image. This is stored as a new variable labeled ‘A.noisy’. Finally, the ‘isoblur()’ function is applied to the noisy image to created a blurred version. 
+This applies to a Gaussian blur filter that smooths and sharpens features in the image. Below are the two images displayed in result of the code provided. 
