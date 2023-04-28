@@ -275,6 +275,27 @@ Transformation Attacks can be quite effective and achieve high success rates. Re
 the MNIST and CIFAR-10 datasets, with success rates of over 90\% for both datasets. This applies random rotations and translations to the input images to 
 generate adversarial examples.” (Xiao et al., 2018)
 
+Explanation of Functional Solution
+
+In order to get a functional model working we would have started with training 5 adversial algorithms.  The reason we would use 5 adversial algorithms
+is so the classifier could determine which of these algorithms works best overall for all the images.  This would give us a broad scope of different
+algorithms and allow us to optimize our percentages of misclassification.  The first algorithm we would use is the Fast Gradient Sign Method (FGSM).
+This is one of the algorithms we attempted to use for our model, but we were unable to get the code to run successfully.  The justification for using this
+method can be found in the Justifications section and the code used as well the code and what the code does and how each part helps achieve the overall 
+goal is listed in the Correctness of Proofs section.  Overall this is a relatively easy attack to implement and it has been proven effective over many 
+binarly classifiers before, so this is why we woukd implement it. The second algorithm we would use is the Spatial-Transformation Based Attack (STBA).  
+This is another algorithm we used for our model, but we were unable to get an output from it.  The justification for using this method can be found in the 
+Justifications section and the code used as well the code and what the code does and how each part helps achieve the overall goal is listed in the 
+Correctness of Proofs section.  Overall this is an effective algorithm that uses multiple transformations in order to fool the classifier from multiple
+angles, so this is why we would implment this attack as well.  The third algorithm we would use is the Carlini-Wagner (CW) Attack.  Through our research
+we found this to be one of the most common and effective adversial attack algorithms.  In order to implement this attack we would first load the model and
+define where we want to perturb the data. Then we would create a loss function that would find the difference between what would generate the adverisal 
+outcome and the percentage values of the perturbed image.  After that define a function that will minimize the loss in order to best fool the classifier.
+
+Carlini and Wagner (CW) Attack
+Jacobian-Based Saliency Map Attack (JSMA) 
+Universal Adverbial Perturbation (UAP)
+
 
 TutorMaster, A. I. (2023, February 2). What is gaussian noise in deep learning? how and why it is used? Medium. Retrieved April 27, 2023, from https://ai.plainenglish.io/what-is-gaussian-noise-in-deep-learning-how-and-why-it-is-used-af3730449e3a 
 
@@ -301,7 +322,3 @@ Rosebrock, A. (2021, April 17). Adversarial attacks with FGSM (fast gradient sig
 Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., \& Brendel, W. (2018, September 27). ImageNet-trained cnns are biased towards texture; increasing shape... OpenReview. Retrieved April 28, 2023, from https://openreview.net/forum?id=Bygh9j09KX 
 
 Xiao, C., Zhu, J.-Y., Li, B., He, W., Liu, M., \& Song, D. (2018, February 15). Spatially transformed adversarial examples. OpenReview. Retrieved April 28, 2023, from https://openreview.net/forum?id=HyydRMZC- 
-
-Khandelwal, Y. (2021). Ensemble Stacking for Machine Learning and Deep Learning. Analytics Vidhya. https://www.analyticsvidhya.com/blog/2021/08/ensemble-stacking-for-machine-learning-and-deep-learning/
-
-Liu, V. a. P. B. D. (2022, December 7). White-box adversarial attacks on images. KejiTech. https://davideliu.com/2020/05/29/white-box-adversarial-attacks-on-images/
