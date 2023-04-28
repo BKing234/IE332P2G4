@@ -100,4 +100,4 @@ the pre-trained model.
 12. The mod_image function modifies some pixels.
 13. The function calculates the pixels in the image in order to know how many to modify.
 14. The function chooses pixels to modify and adds a value between -10 and 10 to their value.
-15. The function returns th modified image
+15. The function returns the modified image
