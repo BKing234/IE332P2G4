@@ -17,7 +17,7 @@ FGSM algorithm
 Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  "FGSM is a single step
 attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack)" (Breaking Deep Learning with Adversarial
 Examples Using Tensorflow, 2018). The method works by calculating the gradient of the loss with respect to the original image.  The algorithm then adds a 
-perturbation to to the image based on the gradient's sign.  The algorithm modifies the image into its adversial version bt making small perturbations.  
+perturbation to to the image based on the gradient's sign.  The algorithm modifies the image into its adversial version by making small perturbations.  
 This allows the adversial image to look very similar to the original image while still fooling the computer.  The way this is accomplished is by finding 
 how much each pixel contributes to the loss.  This is a quick process because the algorithm will follow the chain rule in finding pixels that contribute 
 to maximum loss.  The chain rule breaks the computation into smaller parts, making the calculation of the gradient more accurate and efficient.  The first
@@ -79,3 +79,25 @@ Retrieved April 28, 2023, from https://openreview.net/pdf?id=HyydRMZC-
 ‌
 ‌Xiang, F., Xu, J., Zhang, W., & Wang, W. (2021). A Distributed Biased Boundary Attack Method in Black-Box Attack. Applied Sciences, 11(21), 10479. 
 https://doi.org/10.3390/app112110479
+
+Correctness Proof for FGSM code
+
+This code takes the pre-trained model and by using an epsilon value of 1% perturbs pixels in the dandelion and grass models in order to make them be
+misclassified.  It does this through an FGSM attack by making small perturbations in one step.
+
+1. The code loads the pre-trained model
+2. The code defines the size of images and the color channels
+3. The code then defines epislon as 0.01 or 1%
+4. The code defines a function 'fgsm_attack' that performs the FGSM attack.  This function takes the input, the label(grass or dandelion), epsilon, and 
+the pre-trained model.
+5. The function converts the image into an array.
+6. The pixels in the array are scaled to the range [0.1].
+7. The function computs the loss and gradients of the image for either grass or dandelions.
+8. The sign of the gradients is computed as well as the perturbation.
+9. The perturbation is applied in the range [0,1] and then the pixels are rescaled to [0,255].
+10. The array is converted back to an image.
+11. The adversial image is returned.
+12. The mod_image function modifies some pixels.
+13. The function calculates the pixels in the image in order to know how many to modify.
+14. The function chooses pixels to modify and adds a value between -10 and 10 to their value.
+15. The function returns th modified image
