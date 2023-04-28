@@ -1,0 +1,13 @@
+#Load sample image from the set of images provided
+A <- load.image("/Users/abby/Desktop/A2P2/dandelions/636597665741397587-dandelion-1097518082.jpg");
+
+#Add noise the image
+A.noisy <- (A + .5*rnorm(prod(dim(A))))
+layout(t(1:2))
+isoblur(A.noisy,5)
+
+#Plot the original image
+plot(A, main = "Original Image", axes = FALSE)
+
+#Plot the modified image
+plot(A.noisy, main = "Modified Image", axes = FALSE)

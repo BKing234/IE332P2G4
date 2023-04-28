@@ -47,3 +47,45 @@ photo, the yellow mask of the photo, and the photo after it had been changed.  F
 but the overall algorithm did make changes to an image to fool a classifier based on the colors. If there were more time, knowledge, and contribution
 , the efficiency in the light of performance would have increased from where it is now. It is difficult to express the performance of the algorithm, 
 as it is lacking functionality. 
+
+GAUSSIAN TECHNIQUE
+
+
+The next technique used to fool an image classifier is inserting noise to output a blurred version of the original image. This was found using the 
+Gaussian attack method. Adding noise disrupts patterns, details, and other factors that make an image recognizable. This results in the image being more 
+difficult to distinguish and classify for the model.  Research done at Cornell University found: “Based on the blurring spirit of PS, we further apply 
+gaussian blurring to the data, to investigate the potential influence and threats of gaussian blurring to performance of the network. Experiment results 
+show that PS and well-designed gaussian blurring can form adversarial attacks that completely change classification results of a well-trained target 
+network.” (Zhao & Li, 2020)
+
+The reasoning for using this tactic was because it was effective, flexible, and easy to use. With the troubles our team has faced within the project, we 
+search for an alternative that would change the image in little to no time, using limited functions and tools within R. Through this, we decided on the 
+Gaussian method to add noise to the image. This is effective because the image becomes foggy and less distinct, which creates confusion for the classifier.
+Our prediction, because we failed in the functionality portion of this process, is that this technique would be most effective when blurring a dandelion.
+This would confuse the classifier by displaying an image with less details, such as the photos of the grass. 
+
+The Gaussian attack method is one of the most widely used algorithms. This is used by adding Gaussian noise, which is mathematically defined as 
+𝑥′=𝑥+𝜎𝑁(0,1) where x is the unmodified image, x’ is the modified image, 𝜎 is the standard deviation, and N(0,1) is a noise distribution with a mean of 0 
+and standard deviation of 1. (TutorMaster, 2023) The amount of noise that gets added is controlled by the standard deviation, where the small this value 
+is, the less noticeable it is. Although this is effective in tricking a human, it may not be as effective when fooling a classifier. This is why testing is
+important to reach this middle point and use the most practical method for both factors. 
+
+To create a better understanding and show we attempted to process the images, we created a breakdown of our code and its functionality. This code is loading 
+an image from a folder and plating an unmodified version to start. This stores it in a variable called ‘A’. The next line creates a modified version of 
+the original image by adding noise to each pixel value of the original image. The ‘rnorm()’ function generates a set of random numbers and ‘prod(dim(A))’ 
+calculates the total number of pixels in the image to ensure there is enough random noise generated to match the size of the original image. This is 
+stored as a new variable labeled ‘A.noisy’. Finally, the ‘isoblur()’ function is applied to the noisy image to created a blurred version. This applies 
+to a Gaussian blur filter that smooths and sharpens features in the image. Below are the two images displayed in result of the code provided.
+
+The correctness of our proofs on the code is limited to what runs in the R code, but not within our overall algorithm. The code used displays an image 
+with noise that is blurred to create a modified image. Because there is not enough to back up the percentages in the algorithm to show if this tactic 
+works, there is not much more to comment on. Our prediction is that it would be successful based on the research completed for this method. This leads 
+into the complexity of the overall algorithm, as it did not display results. The most that can be said is that this would typically be a reliable algorithm
+would work to fool an image classification model. 
+
+
+TutorMaster, A. I. (2023, February 2). What is gaussian noise in deep learning? how and why it is used? Medium. Retrieved April 27, 2023, from https://ai.plainenglish.io/what-is-gaussian-noise-in-deep-learning-how-and-why-it-is-used-af3730449e3a 
+Zhao, C., & Li, H. (2020, December 21). Blurring fools the network -- adversarial attacks by feature peak suppression and Gaussian blurring. arXiv.org. Retrieved April 27, 2023, from https://arxiv.org/abs/2012.11442 
+Su, J., Vargas, D. V., & Kouichi, S. (2019, October 17). One pixel attack for fooling deep neural networks. arXiv.org. Retrieved April 27, 2023, from https://arxiv.org/abs/1710.08864 
+Wang, P., Cai, Z., Kim, D., & Li, W. (2021, February 23). Detection mechanisms of one-pixel attack. Wireless Communications and Mobile Computing. Retrieved April 27, 2023, from https://www.hindawi.com/journals/wcmc/2021/8891204/ 
+
