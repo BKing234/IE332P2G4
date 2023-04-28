@@ -241,3 +241,48 @@ Performance
 
 Training, Evaluations, Knowledge, and Accuracy
 
+A one-pixel attack does not involve training a new model or image, but it evaluates the robustness of the pre-trained model. The availability of the 
+training data is also not necessary, as this attack does not require access to any sort of data, besides the preexisting model. This means that the 
+training time of this method is negligible. The evaluation time on the other hand tends to be relatively fast, as the modification of only one pixel is 
+minimal. The knowledge representation, or the structure of this model, is not too important as the attack is solely based on modifying the color of a 
+single pixel in an image. Lastly, the expected accuracy is typically lower than some other attack methods. This is because of the limited number of pixels
+being modified. A study showed, “being able to launch non-targeted attacks by only modifying one pixel on three common deep neural network structures 
+with 68.71%, 71.66% and 63.53% success rates.” (Su et al., 2019) This is still a high success rate, as one is trying to fool a neural network.  
+
+A FGSM also does not require training of models or availability of training data, similar to one-pixel. The evaluation time is relatively fast compared to
+some other adversarial attack methods. This can often be effective in a matter of seconds or less. The simplicity of the model, as it requires minimal 
+steps,  leads to this conclusion. The knowledge representation is important, as the gradient of the loss function needs to be computable. FGSM attacks 
+are generally considered to be a strong form of attack, which leads to a relatively high expected accuracy. Using a sample version of a FGSM, it was 
+reported that “our script has obtained 99.25% accuracy on our training set and 98.77% accuracy on the testing set, implying that our model is doing a 
+good job.”  (Rosebrock, 2021) This shows it is an accurate model, overall. 
+
+A boundary attack method (BAM) does not training of a target model. Each of these models only requires access to the target model being used for the 
+adversarial attack. This means the availability of additional training data is minimal or not required. The knowledge representation of the BAM relies 
+on the smoothness of the boundaries and its sensitivity to changes that may occur. The BAM is considered strong and reliable, as they typically achieve 
+high success rates. One study evaluated BAM on different neural network models and reported success rates ranging from 93.5% to 99.9% on the MNIST dataset, 
+which contained images of handwritten digits.  (Geirhos et al., 2018)
+
+TutorMaster, A. I. (2023, February 2). What is gaussian noise in deep learning? how and why it is used? Medium. Retrieved April 27, 2023, from https://ai.plainenglish.io/what-is-gaussian-noise-in-deep-learning-how-and-why-it-is-used-af3730449e3a 
+
+Zhao, C., \& Li, H. (2020, December 21). Blurring fools the network -- adversarial attacks by feature peak suppression and Gaussian blurring. arXiv.org. Retrieved April 27, 2023, from https://arxiv.org/abs/
+2012.11442 
+
+Su, J., Vargas, D. V., \& Kouichi, S. (2019, October 17). One pixel attack for fooling deep neural networks. arXiv.org. Retrieved April 27, 2023, from https://arxiv.org/abs/1710.08864 
+
+Wang, P., Cai, Z., Kim, D., \& Li, W. (2021, February 23). Detection mechanisms of one-pixel attack. Wireless Communications and Mobile Computing. Retrieved April 27, 2023, from https://www.hindawi.c
+om/journals/wcmc/2021/8891204/ 
+
+Breaking Deep Learning with Adversarial examples using Tensorflow. (2018, May 22). CV-Tricks.com. 
+https://cv-tricks.com/how-to/breaking-deep-learning-with-adversarial-examples-using-tensorf
+low/
+
+Xiao, C., Zhu, J.-Y., Li, B., He, W., Liu, M., \& Song, D. (n.d.). Published as a conference paper at ICLR 2018 SPATIALLY TRANSFORMED ADVERSARIAL EXAMPLES. 
+Retrieved April 28, 2023, from https://openreview.net/pdf?id=HyydRMZC-
+‌
+‌Xiang, F., Xu, J., Zhang, W., \& Wang, W. (2021). A Distributed Biased Boundary Attack Method in Black-Box Attack. Applied Sciences, 11(21), 10479. 
+https://doi.org/10.3390/app112110479
+
+Rosebrock, A. (2021, April 17). Adversarial attacks with FGSM (fast gradient sign method). PyImageSearch. Retrieved April 28, 2023, from https://pyimagesearch.com/2021/03/01/adversarial-attacks-with-fgsm-fast-gradient-sign-method/ 
+
+Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., \& Brendel, W. (2018, September 27). ImageNet-trained cnns are biased towards texture; increasing shape... OpenReview. Retrieved April 28, 2023, from https://openreview.net/forum?id=Bygh9j09KX 
+
