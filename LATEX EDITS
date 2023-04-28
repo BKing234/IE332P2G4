@@ -109,6 +109,10 @@ Retrieved April 28, 2023, from https://openreview.net/pdf?id=HyydRMZC-
 ‌Xiang, F., Xu, J., Zhang, W., & Wang, W. (2021). A Distributed Biased Boundary Attack Method in Black-Box Attack. Applied Sciences, 11(21), 10479. 
 https://doi.org/10.3390/app112110479
 
+Appendices
+
+Testing/Correctness/Verification
+
 Correctness Proof for Weigher Algorithm
 1. Weights of the 5 algorithms are defined.
 2. Loads the image from the file path according to the size set by the model.
@@ -213,3 +217,16 @@ The predicted probabilities for the original and transformed images are printed.
 \item All of the channels are then recombined to display a new image where yellow is replaced with green.
 \item The final, modified image is displayed. 
 \end{enumerate}
+
+Runtime Complexity and Walltime
+It is required that the modified image is produced within 10 seconds with 1% of pixels allotted. However, this doesn't necessarily mean that each modifier should
+take 2 seconds each, but this can be used as an initial benchmark to measure each modifier's runtime. There needs to be a balance where algorithms with longer runtimes are
+shortened enough to obtain results while allowing enough time for the other algorithms to run. This can be done with the budget and the order the modifiers are run
+in the weigher algorithm. Priority will be given to the algorithms that balance accuracy and runtime best together, which should yield balanced results
+whether the remaining modifiers can run or not. Depending on the runtime of the more accurate algorithms, the remaining modifiers would be sorted keeping computational
+time as priority. This order would also be used for any other budget range, as it manages the balance of performance and runtime reasonably. It is expected that performance
+may not be a high as it could be, but it is still high enough to yield positive results in most cases. 
+
+Performance
+
+
