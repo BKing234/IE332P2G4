@@ -268,6 +268,13 @@ for the structure, as it relies on values for standard deviation and mean. The a
 0 and 1), where changes can affect the accuracy of the model. As we jump into accuracy, this form of attack tends to be weaker than some of the others 
 provided. This is mainly because it is so simple and may not be sufficient to mislead the model in some cases. 
 
+The pattern continues where training is not a major part of the next method. The Spatial Transformation Attack method requires more resources than simpler
+attacks, such as Gaussian Noise Attack, but are usually faster than more complex attacks, such as the Boundary Attack Method. This method relies on the 
+spatial transformations and the model’s response to these transformation. This is knowledge is needed to understand the structure of this model. Spatial
+Transformation Attacks can be quite effective and achieve high success rates. Research shows, “this attack has been shown to have high success rates on 
+the MNIST and CIFAR-10 datasets, with success rates of over 90\% for both datasets. This applies random rotations and translations to the input images to 
+generate adversarial examples.” (Xiao et al., 2018)
+
 
 TutorMaster, A. I. (2023, February 2). What is gaussian noise in deep learning? how and why it is used? Medium. Retrieved April 27, 2023, from https://ai.plainenglish.io/what-is-gaussian-noise-in-deep-learning-how-and-why-it-is-used-af3730449e3a 
 
@@ -293,3 +300,4 @@ Rosebrock, A. (2021, April 17). Adversarial attacks with FGSM (fast gradient sig
 
 Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., \& Brendel, W. (2018, September 27). ImageNet-trained cnns are biased towards texture; increasing shape... OpenReview. Retrieved April 28, 2023, from https://openreview.net/forum?id=Bygh9j09KX 
 
+Xiao, C., Zhu, J.-Y., Li, B., He, W., Liu, M., \& Song, D. (2018, February 15). Spatially transformed adversarial examples. OpenReview. Retrieved April 28, 2023, from https://openreview.net/forum?id=HyydRMZC- 
