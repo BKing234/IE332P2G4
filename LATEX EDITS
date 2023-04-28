@@ -52,3 +52,8 @@ be slanted or at odd angles.  All of these factors can be applied at small value
 methods are all fairly simple to implement while providing great results that fool the classifier.  This attack is very useful when there is a specific 
 outcome in mind which was the case in this project.  In conclusion, the reasons this model was selected were its ease of implementation regardless of 
 prior knowledge and its ability to be applied in a way that has a specific output in mind.
+
+Boundary Attack
+Justification - The boundary attack is an adversial attack that aims to find the decision boundary of the classifier. "It has superior effects in scenarios
+where only the input image label is obtained, and it is simple, easy to implement and robust" (CITATION 3). It does this by feeding the classifier 
+pertrubed images until it finds this boundary.  Once it is found the algorith will modify a small percentage of the pixels 
