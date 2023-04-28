@@ -114,42 +114,47 @@ Appendices
 Testing/Correctness/Verification
 
 Correctness Proof for Weigher Algorithm
-1. Weights of the 5 algorithms are defined.
-2. Loads the image from the file path according to the size set by the model.
-3. The image is converted to an array.
-4. The pixels in the array are scaled to [0,1] range.
-5. A prediction is made based on the pretrained model.
-6. A label is created marking which category the image belongs to based on highest probability.
-7. The number of used pixels are defined as 0.
-8. The image to be modified is loaded with size according to the model and converted to an array with defined dimensions.
-9. The expected budget is defined based on the budget and weight of the current adversarial modifier.
-10. Image to be modified is sent to the appropriate function corresponding to adversarial algorithms that modify the image.
-11. The modified image is returned.
-13. Number of used pixels are updated according to the number of pixels used.
-14. Weights are updated based on which algorithm was used.
-15. The function stops if the budget is exceeded and returns the modified image.
+
+\begin{enumerate}
+\item Weights of the 5 algorithms are defined.
+\item Loads the image from the file path according to the size set by the model.
+\item The image is converted to an array.
+\item The pixels in the array are scaled to [0,1] range.
+\item A prediction is made based on the pretrained model.
+\item A label is created marking which category the image belongs to based on highest probability.
+\item The number of used pixels are defined as 0.
+\item The image to be modified is loaded with size according to the model and converted to an array with defined dimensions.
+\item The expected budget is defined based on the budget and weight of the current adversarial modifier.
+\item Image to be modified is sent to the appropriate function corresponding to adversarial algorithms that modify the image.
+\item The modified image is returned.
+\item Number of used pixels are updated according to the number of pixels used.
+\item Weights are updated based on which algorithm was used.
+\item The function stops if the budget is exceeded and returns the modified image.
+\end{enumerate}
 
 Correctness Proof for FGSM code
 
 This code takes the pre-trained model and by using an epsilon value of 1% perturbs pixels in the dandelion and grass models in order to make them be
 misclassified.  It does this through an FGSM attack by making small perturbations in one step.
 
-1. The code loads the pre-trained model
-2. The code defines the size of images and the color channels
-3. The code then defines epsilon as 0.01 or 1%
-4. The code defines a function 'fgsm_attack' that performs the FGSM attack.  This function takes the input, the label(grass or dandelion), epsilon, and 
+\begin{enumerate}
+\item The code loads the pre-trained model
+\item The code defines the size of images and the color channels
+\item The code then defines epsilon as 0.01 or 1%
+\item The code defines a function 'fgsm_attack' that performs the FGSM attack.  This function takes the input, the label(grass or dandelion), epsilon, and 
 the pre-trained model.
-5. The function converts the image into an array.
-6. The pixels in the array are scaled to the range [0.1].
-7. The function computs the loss and gradients of the image for either grass or dandelions.
-8. The sign of the gradients is computed as well as the perturbation.
-9. The perturbation is applied in the range [0,1] and then the pixels are rescaled to [0,255].
-10. The array is converted back to an image.
-11. The adversial image is returned.
-12. The mod_image function modifies some pixels.
-13. The function calculates the pixels in the image in order to know how many to modify.
-14. The function chooses pixels to modify and adds a value between -10 and 10 to their value.
-15. The function returns the modified image
+\item The function converts the image into an array.
+\item The pixels in the array are scaled to the range [0.1].
+\item The function computs the loss and gradients of the image for either grass or dandelions.
+\item The sign of the gradients is computed as well as the perturbation.
+\item The perturbation is applied in the range [0,1] and then the pixels are rescaled to [0,255].
+\item The array is converted back to an image.
+\item The adversial image is returned.
+\item The mod_image function modifies some pixels.
+\item The function calculates the pixels in the image in order to know how many to modify.
+\item The function chooses pixels to modify and adds a value between -10 and 10 to their value.
+\item The function returns the modified image
+\end{enumerate}
 
 Correctness Proof for Boundry Attack code
 
@@ -157,49 +162,54 @@ This code loads a pre-trained image classification model and uses a boundary att
 starts with an original image of either grass or dandelions, computes the gradient of the loss, pertrubs the image in the direction of the gradient, and
 checks if the image is misclassified.  If it is it ends, if not it reruns.
 
-1. The code loads the pre-trained model.
-2. The code defines the binary labels: grass as 2 and dandelion as 1.
-3. The code defines the maximum percentage of pixels that can be changed which is set to 0.01 meaning 1% can be altred.
-4. An image is loaded from the file containing all grass images.
-5. Perform a loop that has a maximum of 100 iterations.
-6. Compute the gradient of the loss.
-7. Compute the step to perturb the image and perterb it by addidnt 'step' to 'x'.
-8. Make sure the pixel values of 'x' are between 0 and 1.
-9. Check if the classifier has been fooled by predicting if the image is grass or dandelion.
-10. If the prediction is 'dandelion_label' break the loop.
-11. An image is loaded from the file containing all dandelion images.
-12. Perform a loop that has a maximum of 100 iterations.
-13. Compute the gradient of the loss.
-14. Compute the step to perturb the image and perterb it by addidnt 'step' to 'x'.
-15. Make sure the pixel values of 'x' are between 0 and 1.
-16. Check if the classifier has been fooled by predicting if the image is grass or dandelion.
-17. If the prediction is 'grass_label' break the loop.
+\begin{enumerate}
+\item The code loads the pre-trained model.
+\item The code defines the binary labels: grass as 2 and dandelion as 1.
+\item The code defines the maximum percentage of pixels that can be changed which is set to 0.01 meaning 1% can be altred.
+\item An image is loaded from the file containing all grass images.
+\item Perform a loop that has a maximum of 100 iterations.
+\item Compute the gradient of the loss.
+\item Compute the step to perturb the image and perterb it by addidnt 'step' to 'x'.
+\item Make sure the pixel values of 'x' are between 0 and 1.
+\item Check if the classifier has been fooled by predicting if the image is grass or dandelion.
+\item If the prediction is 'dandelion_label' break the loop.
+\item An image is loaded from the file containing all dandelion images.
+\item Perform a loop that has a maximum of 100 iterations.
+\item Compute the gradient of the loss.
+\item Compute the step to perturb the image and perterb it by addidnt 'step' to 'x'.
+\item Make sure the pixel values of 'x' are between 0 and 1.
+\item Check if the classifier has been fooled by predicting if the image is grass or dandelion.
+\item If the prediction is 'grass_label' break the loop.
+\end{enumerate}
 
 Correctness Proof for Gaussian Code.
 
 This code loads an image, and adds Gaussian noise to it.  It takes random variables with a mean 0 and standard deviation 1.  It multiplies these values
 by 0.5 and then adds them to each pixel to blur the image.  The original and blurred image are then shown side by side.
-
-1. The code loads an image from the model and assigns it to the variable 'A'.
-2. The code adds Gaussian noise to the image and assigns it to the variable 'A.noisy'.
-3. The two images are put in a two-row grid.
-4. 'isoblur' function is applied with a radius of 5 to blur the noisy image.
-5. The images are plotted next to each other with a title.
+\begin{enumerate}
+\item The code loads an image from the model and assigns it to the variable 'A'.
+\item The code adds Gaussian noise to the image and assigns it to the variable 'A.noisy'.
+\item The two images are put in a two-row grid.
+\item 'isoblur' function is applied with a radius of 5 to blur the noisy image.
+\item The images are plotted next to each other with a title.
+\end{enumerate}
 
 Correctness Proof for Spatial-Transformation Based Attack
 
 This code loads a pre-trained model to classify an image.  The image is transformed using scale, roation, and shear perimeters.  The transformed image is
 processed and used to make a prediction to fool th classifier.  The prdicted probabilites for the original and transformed images are printed.
 
-1. The required libraries are loaded.
-2. The code loads the pre-trained model.
-3. The code defines the size and color channel.
-4. The coad loads a test image.
-5. The scale, rotation, and shear parameters are defined.
-6. The transformation is applied using 'imager::affine'.
-7. The transformed image is reshaped and put back into the model using 'imagenet_preprocess_input'.
-8. The 'predict' function is used to classify the image as dandelion or grass.
-9. The predicted probabilites for the original and transformed images are printed.
+\begin{enumerate}
+\item The required libraries are loaded.
+\item The code loads the pre-trained model.
+\item The code defines the size and color channel.
+\item The coad loads a test image.
+\item The scale, rotation, and shear parameters are defined.
+\item The transformation is applied using 'imager::affine'.
+\item The transformed image is reshaped and put back into the model using 'imagenet_preprocess_input'.
+\item The 'predict' function is used to classify the image as dandelion or grass.
+\item The predicted probabilites for the original and transformed images are printed.
+\end{enumerate}
 
 \noindent Correctness Proof for One-Pixel Attack:
 
