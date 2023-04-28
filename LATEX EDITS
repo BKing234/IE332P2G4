@@ -301,3 +301,7 @@ Rosebrock, A. (2021, April 17). Adversarial attacks with FGSM (fast gradient sig
 Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., \& Brendel, W. (2018, September 27). ImageNet-trained cnns are biased towards texture; increasing shape... OpenReview. Retrieved April 28, 2023, from https://openreview.net/forum?id=Bygh9j09KX 
 
 Xiao, C., Zhu, J.-Y., Li, B., He, W., Liu, M., \& Song, D. (2018, February 15). Spatially transformed adversarial examples. OpenReview. Retrieved April 28, 2023, from https://openreview.net/forum?id=HyydRMZC- 
+
+Khandelwal, Y. (2021). Ensemble Stacking for Machine Learning and Deep Learning. Analytics Vidhya. https://www.analyticsvidhya.com/blog/2021/08/ensemble-stacking-for-machine-learning-and-deep-learning/
+
+Liu, V. a. P. B. D. (2022, December 7). White-box adversarial attacks on images. KejiTech. https://davideliu.com/2020/05/29/white-box-adversarial-attacks-on-images/
