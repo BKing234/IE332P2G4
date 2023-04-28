@@ -102,3 +102,13 @@ the pre-trained model.
 13. The function calculates the pixels in the image in order to know how many to modify.
 14. The function chooses pixels to modify and adds a value between -10 and 10 to their value.
 15. The function returns the modified image
+
+Correctness Proof for Boundry Attack code
+
+This code loads a pre-trained image classification model and uses a boundary attack to generate adversial images for the grass and dandelions.  The code
+starts with an original image of either grass or dandelions, computes the gradient of the loss, pertrubs the image in the direction of the gradient, and
+checks if the image is misclassified.  If it is it ends, if not it reruns.
+
+1. The code loads the pre-trained model.
+2. The code defines the binary labels: grass as 2 and dandelion as 1.
+3. The code defines the maximum
