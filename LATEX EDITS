@@ -262,6 +262,14 @@ on the smoothness of the boundaries and its sensitivity to changes that may occu
 high success rates. One study evaluated BAM on different neural network models and reported success rates ranging from 93.5% to 99.9% on the MNIST dataset, 
 which contained images of handwritten digits.  (Geirhos et al., 2018)
 
+The pattern continues where training is not a major part of the next method. The Gaussian Noise Attack method has an evaluation time that is relatively low,
+as it is much less complex than other methods, such as a boundary attack. This is why it is a fast operation because it does not require many tools or 
+alteration to be successful. There is some knowledge that should be gained for the structure, as it relies on values for standard deviation and mean. 
+The attack requires the image to be in a specific format (pixel values between 0 and 1), where changes can affect the accuracy of the model. As we jump 
+into accuracy, this form of attack tends to be weaker than some of the others provided. This is mainly because it is so simple and may not be sufficient 
+to mislead the model in some cases. 
+
+
 TutorMaster, A. I. (2023, February 2). What is gaussian noise in deep learning? how and why it is used? Medium. Retrieved April 27, 2023, from https://ai.plainenglish.io/what-is-gaussian-noise-in-deep-learning-how-and-why-it-is-used-af3730449e3a 
 
 Zhao, C., \& Li, H. (2020, December 21). Blurring fools the network -- adversarial attacks by feature peak suppression and Gaussian blurring. arXiv.org. Retrieved April 27, 2023, from https://arxiv.org/abs/
