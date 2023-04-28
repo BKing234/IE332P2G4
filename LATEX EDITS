@@ -28,15 +28,15 @@ image is applied to the modifier through the 'apply_modifier' function. The 'app
 are updated. The loop continues until either all the algorithms have modified the image or the budgeted pixels are exhausted.
 
 This algorithm was built keeping several things in mind. 
-1. The weights are predefined based on the how effective and computationally efficient each method was comparatively. These decisions were based on the numerous
+- Weights are predefined based on the how effective and computationally efficient each method was comparatively. These decisions were based on the numerous
 sources that detailed the application methods and available applications of code that could beapplied to this project, which will be detailed throughout this report.
-2. The predictions are based on highest probability because the alternative is to hardset probabilities which introduces chances of arbitrary cases where an image
+- Predictions are based on highest probability because the alternative is to hardset probabilities which introduces chances of arbitrary cases where an image
 can be classified as both or neither categories. By basing on highest probability, the code makes best use of the information given, even if the confidence is not 
 very high. It may also be possible that the highest probability aligns with the correct category, making a hard threshold unnecessary.
-3. The budget is designed to prevent excessive modifications to the image by setting a hard limit on the total number of pixels that can be modified. This ensures
+- The budget is designed to prevent excessive modifications to the image by setting a hard limit on the total number of pixels that can be modified. This ensures
 that the image keeps visual integrity to the original while still causing misclassification by the model. Without the budget constraint, a large amount of pixels
 could be adjusted, resulting in a heavily modified image from the original which looses its real-world applications and value.
-4. Weights are updated after each algorithm iteration to ensure that each modifier has a fair opportunity to modify the image and the budget is distributed
+- Weights are updated after each algorithm iteration to ensure that each modifier has a fair opportunity to modify the image and the budget is distributed
 in a way that maximizes effectiveness overall. After each algorithm is applied, the remaining budget is distributed more evenly among remaining algorithms,
 helping to avoid situations where a more computationally heavy algorithm gets a disproportionately large budget. This also allows the algorithm with the
 highest probability of success to recieve the most budget.
@@ -108,6 +108,22 @@ Retrieved April 28, 2023, from https://openreview.net/pdf?id=HyydRMZC-
 ‌
 ‌Xiang, F., Xu, J., Zhang, W., & Wang, W. (2021). A Distributed Biased Boundary Attack Method in Black-Box Attack. Applied Sciences, 11(21), 10479. 
 https://doi.org/10.3390/app112110479
+
+Correctness Proof for Weigher Algorithm
+1. Weights of the 5 algorithms are defined.
+2. Loads the image from the file path according to the size set by the model.
+3. The image is converted to an array.
+4. The pixels in the array are scaled to [0,1] range.
+5. A prediction is made based on the pretrained model.
+6. A label is created marking which category the image belongs to based on highest probability.
+7. The number of used pixels are defined as 0.
+8. The image to be modified is loaded with size according to the model and converted to an array with defined dimensions.
+9. The expected budget is defined based on the budget and weight of the current adversarial modifier.
+10. Image to be modified is sent to the appropriate function corresponding to adversarial algorithms that modify the image.
+11. The modified image is returned.
+13. Number of used pixels are updated according to the number of pixels used.
+14. Weights are updated based on which algorithm was used.
+15. The function stops if the budget is exceeded and returns the modified image.
 
 Correctness Proof for FGSM code
 
