@@ -76,3 +76,10 @@ the original image by adding noise to each pixel value of the original image. Th
 calculates the total number of pixels in the image to ensure there is enough random noise generated to match the size of the original image. This is 
 stored as a new variable labeled ‘A.noisy’. Finally, the ‘isoblur()’ function is applied to the noisy image to created a blurred version. This applies 
 to a Gaussian blur filter that smooths and sharpens features in the image. Below are the two images displayed in result of the code provided.
+
+The correctness of our proofs on the code is limited to what runs in the R code, but not within our overall algorithm. The code used displays an image 
+with noise that is blurred to create a modified image. Because there is not enough to back up the percentages in the algorithm to show if this tactic 
+works, there is not much more to comment on. Our prediction is that it would be successful based on the research completed for this method. This leads 
+into the complexity of the overall algorithm, as it did not display results. The most that can be said is that this would typically be a reliable algorithm
+would work to fool an image classification model. 
+
