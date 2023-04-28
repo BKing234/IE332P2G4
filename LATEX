@@ -83,3 +83,9 @@ works, there is not much more to comment on. Our prediction is that it would be 
 into the complexity of the overall algorithm, as it did not display results. The most that can be said is that this would typically be a reliable algorithm
 would work to fool an image classification model. 
 
+
+TutorMaster, A. I. (2023, February 2). What is gaussian noise in deep learning? how and why it is used? Medium. Retrieved April 27, 2023, from https://ai.plainenglish.io/what-is-gaussian-noise-in-deep-learning-how-and-why-it-is-used-af3730449e3a 
+Zhao, C., & Li, H. (2020, December 21). Blurring fools the network -- adversarial attacks by feature peak suppression and Gaussian blurring. arXiv.org. Retrieved April 27, 2023, from https://arxiv.org/abs/2012.11442 
+Su, J., Vargas, D. V., & Kouichi, S. (2019, October 17). One pixel attack for fooling deep neural networks. arXiv.org. Retrieved April 27, 2023, from https://arxiv.org/abs/1710.08864 
+Wang, P., Cai, Z., Kim, D., & Li, W. (2021, February 23). Detection mechanisms of one-pixel attack. Wireless Communications and Mobile Computing. Retrieved April 27, 2023, from https://www.hindawi.com/journals/wcmc/2021/8891204/ 
+
