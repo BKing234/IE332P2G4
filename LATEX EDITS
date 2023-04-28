@@ -13,6 +13,34 @@ Important things to put in the report.
 8. Any useful figures, plots, tables, or analyses are allowed to illustrate your level of depth at which you thought about the problem and your solutions.
 9. Make sure all code is well-commented
 
+Weigher Algorithm
+Justification - The 'adversarial' function is designed to modify an original image input using five different adversarial image modifiers. The function
+takes two parameters: the 'image' which specifies the file path of the input image, and the 'budget' specifying the maximum percentage of pixels that can
+be modified by the adversarial image modifier algorithms. The 'adversarial' function first defines the weights for each image modifier respectively. In
+this code, the weights are predefined to 0.2, 0.3, 0.1, 0.2, and 0.2. The function then adjusts the input image to resize it to the specified target size,
+then converts it to an array to be processed and analyzed by a pre-trained machine learning model. The model makes a prediction of what that input image is
+based on the highest probability. Next, the function initializes two variables to track the number of pixels used and the modified image. The 'used_pixels' 
+variable keeps track of the number of pixels that have been used, and the 'modified_image' variable holds a copy of the input image that is then modified with 
+the adversarial algorithms. The function then enters a loop iterating through each adversarial modifier. For each modifier, the expected number of pixels is
+calculated based on the budget and current algorithm's weight, rounded to the nearest pixel. If there is enough pixels left to use within the budget, the modified
+image is applied to the modifier through the 'apply_modifier' function. The 'apply_modifier' function serves to select the correct algorithm based on the
+'algorithm' parameter, apply the 'image', and return the modified image. After applying the adversarial modifier, the number of used pixels and the weights
+are updated. The loop continues until either all the algorithms have modified the image or the budgeted pixels are exhausted.
+
+This algorithm was built keeping several things in mind. 
+1. The weights are predefined based on the how effective and computationally efficient each method was comparatively. These decisions were based on the numerous
+sources that detailed the application methods and available applications of code that could beapplied to this project, which will be detailed throughout this report.
+2. The predictions are based on highest probability because the alternative is to hardset probabilities which introduces chances of arbitrary cases where an image
+can be classified as both or neither categories. By basing on highest probability, the code makes best use of the information given, even if the confidence is not 
+very high. It may also be possible that the highest probability aligns with the correct category, making a hard threshold unnecessary.
+3. The budget is designed to prevent excessive modifications to the image by setting a hard limit on the total number of pixels that can be modified. This ensures
+that the image keeps visual integrity to the original while still causing misclassification by the model. Without the budget constraint, a large amount of pixels
+could be adjusted, resulting in a heavily modified image from the original which looses its real-world applications and value.
+4. Weights are updated after each algorithm iteration to ensure that each modifier has a fair opportunity to modify the image and the budget is distributed
+in a way that maximizes effectiveness overall. After each algorithm is applied, the remaining budget is distributed more evenly among remaining algorithms,
+helping to avoid situations where a more computationally heavy algorithm gets a disproportionately large budget. This also allows the algorithm with the
+highest probability of success to recieve the most budget.
+
 FGSM algorithm
 Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  "FGSM is a single step
 attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack)" (Breaking Deep Learning with Adversarial
