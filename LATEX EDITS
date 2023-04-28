@@ -237,8 +237,6 @@ whether the remaining modifiers can run or not. Depending on the runtime of the 
 time as priority. This order would also be used for any other budget range, as it manages the balance of performance and runtime reasonably. It is expected that performance
 may not be a high as it could be, but it is still high enough to yield positive results in most cases. 
 
-Performance
-
 Training, Evaluations, Knowledge, and Accuracy
 
 A one-pixel attack does not involve training a new model or image, but it evaluates the robustness of the pre-trained model. The availability of the 
