@@ -310,7 +310,10 @@ in that it finds the optimal perturbation across all models.  For this algorthim
 define a function to find the average gradient across all dandelion images.  Using this gradient you would create a perturbation that would maximize 
 misclassifications among all dandelion images.  This process would then be repeated for all grass images.  This is a very efficient attack as it runs each
 image once and then averages the values, so there are no loops to run through.  This attack can take a while to run through sets of data, so if we had 
-sufficient time we would have
+sufficient time we would have chosen to implemnt.  Due to its large difference from other factors it allowed us to get a different way of misclassification
+which is useful for the wieghter so we would have chosen to use it.
+For the weighting algorithm we would have used either the simple majority classifier or weighted majority classifier.  This due to the information provided
+in the project description allowing us to better grasp the concept of these classifiers.  
 
 
 
