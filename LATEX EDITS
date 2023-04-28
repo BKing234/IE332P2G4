@@ -56,4 +56,16 @@ prior knowledge and its ability to be applied in a way that has a specific outpu
 Boundary Attack
 Justification - The boundary attack is an adversial attack that aims to find the decision boundary of the classifier. "It has superior effects in scenarios
 where only the input image label is obtained, and it is simple, easy to implement and robust" (CITATION 3). It does this by feeding the classifier 
-pertrubed images until it finds this boundary.  Once it is found the algorith will modify a small percentage of the pixels 
+pertrubed images until it finds this boundary.  Once it is found the algorith will modify a small percentage of the pixels (1%) to produce an adversial
+image that is misclassified.  The attack selects a starting point and then perturbs in a random direction.  If this still results in correct classification,
+then the perturbation is increased.  If it is incorrectly classified, then the pertrubation is decreased.  The algorithm will continue to query the 
+classifier until the boundary is found, and then modify pixels within that boundary.
+
+We chose the boundary method as one of our methods for many reasons.  Boundary attacks do not require any knowledge of the classifier, but only need to
+see the images and run tests on them.  This means they can easily be run on any system with very little work and are able to be used in most scenarios.
+Another advanatge is they can fool the classifier with very small perturbations.  This is useful for the rubric we were provided as only 1% of the pixels
+could be changed.  Because this attack finds the decision boundary it can find a small region where changes will make the most difference.  This allows the
+model to make small changes that are not very noticeable, but fool the classifier.  Boundary attacks are also adaptive in their ability to find the most
+effective areas of the picture to change.  It can avoid the areas of the image that do not have much factor on the classification in order to maximize
+perturbation in the areas that will most likely result in a misclassification.  Overall, boundary attacks are effective due to their ease of implementation,
+their effectiveness while making few changes, and adaptability.
