@@ -136,4 +136,19 @@ by 0.5 and then adds them to each pixel to blur the image.  The original and blu
 2. The code adds Gaussian noise to the image and assigns it to the variable 'A.noisy'.
 3. The two images are put in a two-row grid.
 4. 'isoblur' function is applied with a radius of 5 to blur the noisy image.
-5. The images are plotted next to each other with a title
+5. The images are plotted next to each other with a title.
+
+Correctness Proof for Spatial-Transformation Based Attack
+
+This code loads a pre-trained model to classify an image.  The image is transformed using scale, roation, and shear perimeters.  The transformed image is
+processed and used to make a prediction to fool th classifier.  The prdicted probabilites for the original and transformed images are printed.
+
+1. The required libraries are loaded.
+2. The code loads the pre-trained model.
+3. The code defines the size and color channel.
+4. The coad loads a test image.
+5. The scale, rotation, and shear parameters are defined.
+6. The transformation is applied using 'imager::affine'.
+7. The transformed image is reshaped and put back into the model using 'imagenet_preprocess_input'.
+8. The 'predict' function is used to classify the image as dandelion or grass.
+9. The predicted probabilites for the original and transformed images are printed.
