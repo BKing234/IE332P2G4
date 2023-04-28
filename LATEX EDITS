@@ -126,3 +126,14 @@ checks if the image is misclassified.  If it is it ends, if not it reruns.
 15. Make sure the pixel values of 'x' are between 0 and 1.
 16. Check if the classifier has been fooled by predicting if the image is grass or dandelion.
 17. If the prediction is 'grass_label' break the loop.
+
+Correctness Proof for Gaussian Code.
+
+This code loads an image, and adds Gaussian noise to it.  It takes random variables with a mean 0 and standard deviation 1.  It multiplies these values
+by 0.5 and then adds them to each pixel to blur the image.  The original and blurred image are then shown side by side.
+
+1. The code loads an image from the model and assigns it to the variable 'A'.
+2. The code adds Gaussian noise to the image and assigns it to the variable 'A.noisy'.
+3. The two images are put in a two-row grid.
+4. 'isoblur' function is applied with a radius of 5 to blur the noisy image.
+5. The images are plotted next to each other with a title
