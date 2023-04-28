@@ -37,6 +37,7 @@ Justification - The Spatial-Transformation Based Attack (STBA) is an adversial a
 create an adversial image.  "All the existing approaches directly modify pixels, but we aim to smoothly change the geometry of the scene while keeping the
 original appearance, producing more perceptually realistic adversarial examples" ((Xiao et al., n.d.)).  The goal of this attack is to make the change
 unrecognizable to the human eye, but still make the classifier misclassify the image.  The first step of STBA is to select a transformation function.
+
 Possible transformations include rotating, scaling, or shearing the image.  These transformations are applied to the input and an output is produced with
 features to trick the model.  
 
