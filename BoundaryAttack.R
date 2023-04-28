@@ -26,11 +26,11 @@ for (i in 1:100) {
   x <- pmax(pmin(x, 1), 0)
   
   # Check if the classifier has been tricked
-  if (model %>% predict_classes(x/255) == grass_label) break
+  if (model %>% predict_classes(x/255) == dandelion_label) break
 }
 
 # Load an image of the dandelions
-x <- image_load("/home/jupyter/332_data/data-for-332/grass/",i,sep="")
+x <- image_load("/home/jupyter/332_data/data-for-332/dandelion/",i,sep="")
 
 # Perform the boundary attack for dandelions
 for (i in 1:100) {
@@ -47,7 +47,7 @@ for (i in 1:100) {
   x <- pmax(pmin(x, 1), 0)
   
   # # Check if the classifier has been tricked
-  if (model %>% predict_classes(x/255) == dandelion_label) break
+  if (model %>% predict_classes(x/255) == grass_label) break
 }
 
 
