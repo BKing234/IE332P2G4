@@ -197,4 +197,19 @@ processed and used to make a prediction to fool th classifier.  The prdicted pro
 8. The 'predict' function is used to classify the image as dandelion or grass.
 9. The predicted probabilites for the original and transformed images are printed.
 
-Correctness Proof for One-Pixel
+\noindent Correctness Proof for One-Pixel Attack:
+
+This code transformed an image by creating a yellow mask that replaced all of the yellow pieces to green. 
+The predicted probabilities for the original and transformed images are printed.
+
+\begin{enumerate}
+\item The required libraries are loaded.
+\item The code loads a sample image.
+\item The code displays the original image.
+\item The code extracts the color channels of red, green and blue.
+\item Then, a yellow mask is created, that is the same size as the original image, and indicates yellow pixels.
+\item This yellow mask is then also displayed.
+\item Next, the yellow pixels are set to green.
+\item All of the channels are then recombined to display a new image where yellow is replaced with green.
+\item The final, modified image is displayed. 
+\end{enumerate}
