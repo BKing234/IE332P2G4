@@ -88,7 +88,7 @@ misclassified.  It does this through an FGSM attack by making small perturbation
 
 1. The code loads the pre-trained model
 2. The code defines the size of images and the color channels
-3. The code then defines epislon as 0.01 or 1%
+3. The code then defines epsilon as 0.01 or 1%
 4. The code defines a function 'fgsm_attack' that performs the FGSM attack.  This function takes the input, the label(grass or dandelion), epsilon, and 
 the pre-trained model.
 5. The function converts the image into an array.
