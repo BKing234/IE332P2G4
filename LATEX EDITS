@@ -15,14 +15,14 @@ Important things to put in the report.
 
 FGSM algorithm
 Justification - The Fast Gradient Sign Method (FGSM) is a method for generating adversial attacks that is simple yet effective.  "FGSM is a single step
-attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack)" (INSERT CITATION 1). The method works by 
-calculating the gradient of the loss with respect to the original image.  The algorithm then adds a perturbation to to the image based on the gradient's
-sign.  The algorithm modifies the image into its adversial version bt making small perturbations.  This allows the adversial image to look very similar
-to the original image while still fooling the computer.  The way this is accomplished is by finding how much each pixel contributes to the loss.  This
-is a quick process because the algorithm will follow the chain rule in finding pixels that contribute to maximum loss.  The chain rule breaks the
-computation into smaller parts, making the calculation of the gradient more accurate and efficient.  The first step in this method is to feed the model
-input data and then calculate the loss.  The gradient with respect to the loss is then calculated.  From this gradient a perturbation is added in order
-to generate the new adversial model.  
+attack, ie.. the perturbation is added in a single step instead of adding it over a loop (Iterative attack)" (Breaking Deep Learning with Adversarial
+Examples Using Tensorflow, 2018). The method works by calculating the gradient of the loss with respect to the original image.  The algorithm then adds a 
+perturbation to to the image based on the gradient's sign.  The algorithm modifies the image into its adversial version bt making small perturbations.  
+This allows the adversial image to look very similar to the original image while still fooling the computer.  The way this is accomplished is by finding 
+how much each pixel contributes to the loss.  This is a quick process because the algorithm will follow the chain rule in finding pixels that contribute 
+to maximum loss.  The chain rule breaks the computation into smaller parts, making the calculation of the gradient more accurate and efficient.  The first
+step in this method is to feed the model input data and then calculate the loss.  The gradient with respect to the loss is then calculated.  From this 
+gradient a perturbation is added in order to generate the new adversial model.  
 
 We chose this method for many reasons.  The first reason is the computational efficiency of the FGSM method.  It
 can generate adversial attacks on a model quickly.  This method is also easy to implement because it requires a calculation of the gradient of the loss
@@ -35,7 +35,7 @@ computational efficiency, and effectiveness.
 Spatial-Transformation Based Attack
 Justification - The Spatial-Transformation Based Attack (STBA) is an adversial attack that applies a spatial transformation to the input data in order to
 create an adversial image.  "All the existing approaches directly modify pixels, but we aim to smoothly change the geometry of the scene while keeping the
-original appearance, producing more perceptually realistic adversarial examples" (INSERT CITATION 2).  The goal of this attack is to make the change
+original appearance, producing more perceptually realistic adversarial examples" ((Xiao et al., n.d.)).  The goal of this attack is to make the change
 unrecognizable to the human eye, but still make the classifier misclassify the image.  The first step of STBA is to select a transformation function.
 Possible transformations include rotating, scaling, or shearing the image.  These transformations are applied to the input and an output is produced with
 features to trick the model.  
@@ -55,7 +55,7 @@ prior knowledge and its ability to be applied in a way that has a specific outpu
 
 Boundary Attack
 Justification - The boundary attack is an adversial attack that aims to find the decision boundary of the classifier. "It has superior effects in scenarios
-where only the input image label is obtained, and it is simple, easy to implement and robust" (CITATION 3). It does this by feeding the classifier 
+where only the input image label is obtained, and it is simple, easy to implement and robust" ((Xiang et al., 2021)). It does this by feeding the classifier 
 pertrubed images until it finds this boundary.  Once it is found the algorith will modify a small percentage of the pixels (1%) to produce an adversial
 image that is misclassified.  The attack selects a starting point and then perturbs in a random direction.  If this still results in correct classification,
 then the perturbation is increased.  If it is incorrectly classified, then the pertrubation is decreased.  The algorithm will continue to query the 
@@ -69,3 +69,13 @@ model to make small changes that are not very noticeable, but fool the classifie
 effective areas of the picture to change.  It can avoid the areas of the image that do not have much factor on the classification in order to maximize
 perturbation in the areas that will most likely result in a misclassification.  Overall, boundary attacks are effective due to their ease of implementation,
 their effectiveness while making few changes, and adaptability.
+
+Sources
+Breaking Deep Learning with Adversarial examples using Tensorflow. (2018, May 22). CV-Tricks.com. 
+https://cv-tricks.com/how-to/breaking-deep-learning-with-adversarial-examples-using-tensorflow/
+
+Xiao, C., Zhu, J.-Y., Li, B., He, W., Liu, M., & Song, D. (n.d.). Published as a conference paper at ICLR 2018 SPATIALLY TRANSFORMED ADVERSARIAL EXAMPLES. 
+Retrieved April 28, 2023, from https://openreview.net/pdf?id=HyydRMZC-
+‌
+‌Xiang, F., Xu, J., Zhang, W., & Wang, W. (2021). A Distributed Biased Boundary Attack Method in Black-Box Attack. Applied Sciences, 11(21), 10479. 
+https://doi.org/10.3390/app112110479
