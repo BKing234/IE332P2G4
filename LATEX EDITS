@@ -152,3 +152,5 @@ processed and used to make a prediction to fool th classifier.  The prdicted pro
 7. The transformed image is reshaped and put back into the model using 'imagenet_preprocess_input'.
 8. The 'predict' function is used to classify the image as dandelion or grass.
 9. The predicted probabilites for the original and transformed images are printed.
+
+Correctness Proof for One-Pixel
